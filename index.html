@@ -1,13 +1,14 @@
-<!DOCTYPE html>
-    <html lang="en">
+<!doctype html>
+    <html lang="en" ng-app="gdg" ng-controller="GdgCtrl">
         <head>
-            <title>Missoula Google Developer Group</title>
+            <title>{{Config.name}} | Google Developer Group</title>
             <meta name="viewport" content="width=device-width, initial-scale=1.0">
             <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
             <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,300,600,800' rel='stylesheet' type='text/css'>
-            <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
+            <link href="http://netdna.bootstrapcdn.com/twitter-bootstrap/2.3.0/css/bootstrap-combined.no-icons.min.css" rel="stylesheet">
+            <link href="http://netdna.bootstrapcdn.com/font-awesome/3.0.2/css/font-awesome.css" rel="stylesheet">
             <link href="css/gdg.css" rel="stylesheet" media="screen">
-            <!--<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">-->
+            
         </head>
         <body>
             <!--
@@ -17,15 +18,14 @@
             <div class="navbar navbar-fixed-top">
                 <div class="navbar-inner">
                     <div class="container">
-                        <a class="brand" href="#about"></a>
+                        <a class="brand" href="#about">{{Config.name}}</a>
                         <ul class="nav">
                             <li id="about_nav" class="active"><a href="#about">About</a></li>
                             <li id="news_nav"><a href="#news">News</a></li>
                             <!--<li id="events_nav"><a href="#events">Events</a></li>-->
                             <!--<li id="photos_nav"><a href="#photos">Photos</a></li>-->
-                            
                         </ul>
-                        <button type="button" id="join_chapter" class="btn btn-primary pull-right">Join Group</button>
+                        <button type="button" id="join_chapter" class="btn btn-primary pull-right" ng-click="JoinGroup()">Join Group</button>
                     </div>
                 </div>
             </div>
@@ -49,9 +49,9 @@
                     <!-- Button to G+ and community -->
                     <br>
                     <p>Follow and +1 our G+ pages.</p>
-                    <a class="btn btn-primary" href="https://plus.google.com/b/111439872924209508980/111439872924209508980/posts">Our Google+ Page</a>
+                    <a class="btn btn-primary" ng-href="https://plus.google.com/b/{{Config.id}}/{{Config.id}}/posts">Our Google+ Page</a>
 
-                    <a class="btn btn-primary" href="https://plus.google.com/b/111439872924209508980/communities/108192273305109447696">Our Google+ Community</a>
+                    <a class="btn btn-primary" ng-href="https://plus.google.com/b/{{Config.id}}/communities/{{Config.community_id}}">Our Google+ Community</a>
                     
 
                     <!--Event Section-->
@@ -84,6 +84,7 @@
                     </div>
                 </div>
             </div>
+            <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.0.4/angular.min.js"></script>
             <script src="https://apis.google.com/js/plusone.js" parsetags="explicit"></script>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
             <script src="js/bootstrap.min.js"></script>

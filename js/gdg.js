@@ -1,8 +1,14 @@
-var Config = (function(){
+
+
+// define the one global variable, the GDG app
+var gdg = angular.module("gdg", []);
+
+gdg.factory("Config",function() {
     var config = {
         //modify these
         'name'          : 'GDG Missoula',
         'id'            : '111439872924209508980',
+        'community_id'  : '108192273305109447696',
         'google_api'    : 'AIzaSyBG1VthlzvFngUBCTgjhDrDzO6NKahwujg',
         'pwa_id'        : '', //picasa web album id
         //custom stuff
@@ -14,10 +20,15 @@ var Config = (function(){
                             }
                           }
     }
-    return {get : function(a) { return config[a]}}
-})();
+    return config;
+});
 
-/**************/
+gdg.controller("GdgCtrl",['$scope','Config', function($scope, Config) {
+    $scope.Config = Config;
+}]);
+
+
+/*
 //INIT
 $(document).ready(function() {
     changePanel();
@@ -27,7 +38,7 @@ $(document).ready(function() {
 $('title').prepend(Config.get('name')+' | ');
 $('.brand').html('<strong>'+Config.get('name')+'</strong>');
 
-/*************/
+
 
 
 $(window).on('hashchange', function() {
@@ -258,9 +269,7 @@ function rebuildStreamUI(entries) {
               .appendTo($thumb);
         $('<img>')
             .attr({
-              src: thumb.url/*,
-              width: thumb.width,
-              height: thumb.height*/
+              src: thumb.url
             })
             .appendTo($thumb);
       }
@@ -296,3 +305,5 @@ function rebuildStreamUI(entries) {
   //render +1 buttons
   gapi.plusone.go();
 }
+
+*/
