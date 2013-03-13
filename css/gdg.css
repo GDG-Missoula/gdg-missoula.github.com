@@ -15,6 +15,7 @@
  */
 #home {
   min-height: 162px;
+  background: url(img/gdgtop.jpg) top left no-repeat;
 }
 /* stream */
 #news-feed {

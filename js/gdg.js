@@ -60,6 +60,7 @@ $.getJSON('https://www.googleapis.com/plus/v1/people/'+Config.get('id')+'?fields
     $('#about').next().html(data.aboutMe);
     
     //cover photo
+    /*
     if(data.cover.coverPhoto.url && Config.get('cover_photo')){
         $('#home').css({
             'background':'transparent url('+data.cover.coverPhoto.url+') '+data.cover.coverInfo.leftImageOffset+'px '+(data.cover.coverInfo.topImageOffset)+'px no-repeat',
@@ -67,7 +68,7 @@ $.getJSON('https://www.googleapis.com/plus/v1/people/'+Config.get('id')+'?fields
         });
         
     }
-    
+    */
 })
 
 //tie photo album to event
