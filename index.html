@@ -1,94 +1,88 @@
-<!DOCTYPE html>
-    <html lang="en">
-        <head>
-            <title>Missoula Google Developer Group</title>
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-            <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,700,300,600,800' rel='stylesheet' type='text/css'>
-            <link href="css/bootstrap.min.css" rel="stylesheet" media="screen">
-            <link href="css/gdg.css" rel="stylesheet" media="screen">
-            <!--<link href="css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">-->
-        </head>
-        <body>
-            <!--
-            <a href="https://github.com/joshuawoodward/gdg-bootstrap" target="_blank" ><img id="gdg_ribbon" src="img/gdg-ribbon.png" alt="GDG Bootstrap" /></a>
-            -->
+<!doctype html>
+<html ng-app="gdgXBoomerang" itemscope itemtype="http://schema.org/Organization">
+    <head>
+        <title>Google Developer Group</title>
+        <link rel="canonical" ng-href="{{ canonical }}" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <meta name="description" content="Google Developer Groups (GDG) are technology user groups that meet to discuss the latest Technologies, Tools, SDKs, & APIs like Android, GWT, GAE, & GCP.">
+        <meta name="application-name" content="GDG Boomerang">
+        <meta name="fragment" content="!" />
+        <link href="https://fonts.googleapis.com/css?family=RobotoDraft:400,300,500,700,400italic" rel="stylesheet" >
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,700italic,300,700' rel='stylesheet'>
+        <!-- bower:css -->
+        <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.css">
+        <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+        <!-- endinject -->
+        <!-- inject:css -->
+        <link rel="stylesheet" href="/app/css/gdg.css">
+        <!-- endinject -->
+        <link rel="icon" sizes="16x16 32x32" href="/favicon.ico">
+        <script>
+            (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+                (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+                    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+            })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+            ga('create', 'UA-98864-5', 'auto');
+            ga('require', 'displayfeatures');
+            ga('require', 'linkid', 'linkid.js');
+            ga('send', 'pageview');
+        </script>
+    </head>
+    <body ng-controller="MainController as mc">
 
-            <div class="navbar navbar-fixed-top">
-                <div class="navbar-inner">
-                    <div class="container">
-                        <a class="brand" href="#about"></a>
-                        <ul class="nav">
-                            <li id="about_nav" class="active"><a href="#about">About</a></li>
-                            <li id="news_nav"><a href="#news">News</a></li>
-                            <!--<li id="events_nav"><a href="#events">Events</a></li>-->
-                            <!--<li id="photos_nav"><a href="#photos">Photos</a></li>-->
-                            
-                        </ul>
-                        <button type="button" id="join_chapter" class="btn btn-primary pull-right">Join Group</button>
-                    </div>
+        <!-- TODO Edit here to update your snippet for sharing. -->
+        <span itemprop="name" style="display: none;">GDG Space Coast - Brevard County, FL, USA.</span>
+        <span itemprop="description" style="display: none;">Google Developer Group (GDG) Space Coast is a technology user group that meets to discuss the latest Google Technologies, Tools, SDKs, and APIs.</span>
+        <img itemprop="image" style="display: none;" src="app/images/GDG-X-Boomerang-snippet.png">
+
+        <md-toolbar class="md-hue-2 navBar">
+            <div class="md-toolbar-tools">
+                <h2 flex>
+                    <span ng-cloak>{{ mc.chapterName }}</span>
+                </h2>
+                <div hide-sm>
+                    <div class="g-plusone" data-size="large"></div>
                 </div>
+                <a ng-if="mc.googlePlusLink" ng-href="{{ mc.googlePlusLink }}" rel="publisher" target="_blank">
+                    <md-icon class="socialIcon" md-font-icon="fa fa-google-plus-square" alt="Google+"></md-icon>
+                </a>
+                <a ng-if="mc.twitterLink" ng-href="{{ mc.twitterLink }}" target="_blank">
+                    <md-icon class="socialIcon" md-font-icon="fa fa-twitter-square" alt="Twitter"></md-icon>
+                </a>
+                <a ng-if="mc.facebookLink" ng-href="{{ mc.facebookLink }}" target="_blank">
+                    <md-icon class="socialIcon" md-font-icon="fa fa-facebook-square" alt="Facebook"></md-icon>
+                </a>
+                <a ng-if="mc.meetupLink" ng-href="{{ mc.meetupLink }}" target="_blank">
+                    <img src="app/images/icons/meetup.png" alt="Meetup" class="png-icon invert">
+                </a>
+                <a ng-if="mc.gdgLink" ng-href="{{ mc.gdgLink }}" target="_blank">
+                    <img src="app/images/icons/GDG_square_lg.png" alt="GDG" class="png-icon gdg-icon grayscale">
+                </a>
             </div>
-            <div class="container">
-                <!--About Section-->
-                <div class="panel" id="about_sec">
-                    <p>&nbsp;</p>
-                    <p>&nbsp;</p>
-                    <!--
-                    <div class="alert alert-info">
-                        <button type="button" class="close" data-dismiss="alert">&times;</button>
-                        GDG Bootstrap is on <a href="https://github.com/joshuawoodward/gdg-bootstrap/">GitHub</a>, and it is open sourced. Learn how to create a site for your GDG by changing only 3 lines of code.
-                    </div>
-                -->
-                    <div class="hero-unit" id="home">
-                        
-                    </div>
-                    <p id="about">&nbsp;</p>
-                    <div></div>
-
-                    <!-- Button to G+ and community -->
-                    <br>
-                    <p>Follow and +1 our G+ pages.</p>
-                    
-                    <a class="btn btn-primary" href="https://plus.google.com/111439872924209508980" rel="publisher">Our Google+ Page</a>
-
-                    <a class="btn btn-primary" href="https://plus.google.com/b/111439872924209508980/communities/108192273305109447696">Our Google+ Community</a>
-                    
-
-                    <!--Event Section-->
-                    <div id="events_sec">
-                        <p id="events">&nbsp;</p>
-                        <p id="upcoming_events">&nbsp;</p>
-                        <h3>Upcoming Events</h3>
-                        <div></div>
-                        <p id="past_events">&nbsp;</p>
-                        <h3>Past Events</h3>
-                        <div></div>
-                    </div>
-                </div>
-		<!--News Section-->
-                <div class="panel" id="news_sec">
-                    <p>&nbsp;</p><p>&nbsp;</p>
-                    <p id="news">&nbsp;</p>
-                    <div>
-                        <ul id="news-feed"></ul>
-                    </div>
-                </div>
-
-                <!--Photo Section-->
-                <div class="panel" id="photos_sec">
-                    <p>&nbsp;</p><p>&nbsp;</p>
-                    <p id="photos">&nbsp;</p>
-                    <div>
-                        <ul class="thumbnails" id="photo_container">
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <script src="https://apis.google.com/js/plusone.js" parsetags="explicit"></script>
-            <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.1/jquery.min.js"></script>
-            <script src="js/bootstrap.min.js"></script>
-            <script src="js/dateFormat.js"></script>
-            <script src="js/gdg.js"></script>
-        </body>
-    </html>    
+        </md-toolbar>
+        <md-tabs class="navTabs" md-selected="mc.navTab" md-stretch-tabs="never">
+            <md-tab id="about-tab"><a class="navTabLink" href="#!/about">About</a></md-tab>
+            <md-tab id="news-tab"><a class="navTabLink" href="#!/news">News</a></md-tab>
+            <md-tab id="events-tab"><a class="navTabLink" href="#!/events">Events</a></md-tab>
+            <md-tab id="activities-tab"><a class="navTabLink" href="#!/activities">What We Do</a></md-tab>
+            <md-tab id="organizers-tab"><a class="navTabLink" href="#!/organizers">Organizers</a></md-tab>
+            <md-tab id="photos-tab"><a class="navTabLink" href="#!/photos">Photos</a></md-tab>
+        </md-tabs>
+        <div layout layout-margin layout-align="center start">
+            <div ng-view flex-sm="100" flex-md="90" flex-lg="80" flex-gt-lg="75"></div>
+        </div>
+    </body>
+    <script src="https://apis.google.com/js/platform.js" async defer></script>
+    <!-- bower:js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-route.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.0-rc.2/angular-sanitize.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/0.9.0/angular-material.min.js"></script>
+    <!-- endinject -->
+    <!-- inject:js -->
+    <script src="/app/dist/boomerang.min.js"></script>
+    <!-- endinject -->
+</html>
