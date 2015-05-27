@@ -62,12 +62,12 @@ angular.module('gdgXBoomerang')
         'activities': {
             techTalks: true,
             codeLabs: true,
-            hackathons: true,
+            hackathons: false,
             devFests: true,
-            appClinics: true,
-            panels: true,
-            designSprints: true,
-            roundTables: true
+            appClinics: false,
+            panels: false,
+            designSprints: false,
+            roundTables: false
         }
         // To update the snippet which is used for sharing, see the TODO in the index.html.
     };
