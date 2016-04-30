@@ -433,21 +433,6 @@ angular.module('gdgXBoomerang')
 });
 
 angular.module('gdgXBoomerang')
-.controller('OrganizersController', function ($http, Config, NavService) {
-    var vm = this;
-    vm.loading = false;
-    NavService.setNavTab(4);
-
-    var url = 'https://hub.gdgx.io/api/v1/chapters/' + Config.id + '?callback=JSON_CALLBACK';
-    var headers = { 'headers': { 'Accept': 'application/json;' }, 'timeout': 2000 };
-    $http.jsonp(url, headers).success(function (data) {
-        if (data.organizers) {
-            vm.organizers = data.organizers;
-        }
-    });
-});
-
-angular.module('gdgXBoomerang')
 .controller('PhotosController', function ($http, Config, NavService) {
     var vm = this;
     vm.loading = true;
@@ -482,6 +467,21 @@ angular.module('gdgXBoomerang')
                 'Logging out of your Google Account and logging back in may resolve this issue.';
             vm.loading = false;
         });
+});
+
+angular.module('gdgXBoomerang')
+.controller('OrganizersController', function ($http, Config, NavService) {
+    var vm = this;
+    vm.loading = false;
+    NavService.setNavTab(4);
+
+    var url = 'https://hub.gdgx.io/api/v1/chapters/' + Config.id + '?callback=JSON_CALLBACK';
+    var headers = { 'headers': { 'Accept': 'application/json;' }, 'timeout': 2000 };
+    $http.jsonp(url, headers).success(function (data) {
+        if (data.organizers) {
+            vm.organizers = data.organizers;
+        }
+    });
 });
 
 angular.module('gdgXBoomerang')
